@@ -1,2 +1,25 @@
-<p>Add new person</p>
-<button (click)="addNewPerson()">Add</button>
+<form (ngSubmit)="onAddNewPerson(newPersonForm)" #newPersonForm="ngForm">
+  <div class="form-group">
+    <label for="firstName">First name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      required
+      ngModel
+      name="firstName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      required
+      ngModel
+      name="lastName"
+    />
+  </div>
+  <button type="submit" [disabled]="!newPersonForm.form.valid">Add</button>
+</form>

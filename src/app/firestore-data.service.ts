@@ -28,10 +28,10 @@ export class FirestoreDataService {
       );
   }
 
-  public createNewPerson() {
+  public createNewPerson(personData: Person) {
     this.db
       .collection('people')
-      .add({ firstName: 'Jurek', lastName: 'Skowron' } as Person)
+      .add(personData)
       .catch(err => {
         console.error(err);
       });
