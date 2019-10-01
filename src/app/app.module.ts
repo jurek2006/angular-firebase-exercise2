@@ -6,9 +6,10 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NewPersonComponent } from './people/new-person/new-person.component';
 
 @NgModule({
-  declarations: [AppComponent, PeopleComponent],
+  declarations: [AppComponent, PeopleComponent, NewPersonComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),

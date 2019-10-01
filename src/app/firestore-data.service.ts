@@ -27,4 +27,13 @@ export class FirestoreDataService {
         })
       );
   }
+
+  public createNewPerson() {
+    this.db
+      .collection('people')
+      .add({ firstName: 'Jurek', lastName: 'Skowron' } as Person)
+      .catch(err => {
+        console.error(err);
+      });
+  }
 }
